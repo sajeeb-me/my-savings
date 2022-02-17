@@ -12,18 +12,23 @@ function getInputText (textInput){
 
 // calculate balance
 document.getElementById("calculate-btn").addEventListener("click", function() {
-    // get value 
+    // get value
+    // debugger;
     const income = getInputValue("income");
     const foodCost = getInputValue("food-cost");
     const rentCost = getInputValue("rent-cost");
     const clothesCost = getInputValue("clothes-cost");
-    // console.log(typeof income)
     // get expence 
-    const totalExpence = foodCost+rentCost+clothesCost;
-    const expenceText = getInputText("expences");
-    expenceText.innerText = totalExpence;
-    const balance = getInputText("balance");
-    balance.innerText = income-totalExpence;
+    if (typeof income == "number"){
+        const totalExpence = foodCost+rentCost+clothesCost;
+        const expenceText = getInputText("expences");
+        expenceText.innerText = totalExpence;
+        const balance = getInputText("balance");
+        balance.innerText = income-totalExpence;
+    }
+    else{
+        return "NAN"
+    }
 })
 
 // saving and remaining 
