@@ -17,6 +17,7 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
     const foodCost = getInputValue("food-cost");
     const rentCost = getInputValue("rent-cost");
     const clothesCost = getInputValue("clothes-cost");
+    // console.log(typeof income)
     // get expence 
     const totalExpence = foodCost+rentCost+clothesCost;
     const expenceText = getInputText("expences");
