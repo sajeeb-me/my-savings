@@ -19,7 +19,7 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
     const rentCost = getInputValue("rent-cost");
     const clothesCost = getInputValue("clothes-cost");
     // get expence 
-    if (income>0 && foodCost>0 && rentCost>0 && clothesCost>0){
+    if (income>0 && foodCost>=0 && rentCost>=0 && clothesCost>=0){
         const totalExpence = foodCost+rentCost+clothesCost;
         // error handle 
         if(totalExpence>income){
@@ -40,7 +40,7 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
 document.getElementById("save-btn").addEventListener("click", function(){
     const income = getInputValue("income");
     const save = getInputValue("save");
-    if(save>0){
+    if(save>=0){
         const saving = income*(save/100);
         const savingAmount = getInputText("saving-amount");
         savingAmount.innerText = saving;
