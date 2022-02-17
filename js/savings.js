@@ -19,15 +19,19 @@ document.getElementById("calculate-btn").addEventListener("click", function() {
     const rentCost = getInputValue("rent-cost");
     const clothesCost = getInputValue("clothes-cost");
     // get expence 
-    if (typeof income == "number"){
+    if (income>0 && foodCost>0 && rentCost>0 && clothesCost>0){
         const totalExpence = foodCost+rentCost+clothesCost;
+        if(totalExpence>income){
+            alert("Your expence is bigger then your income!")
+            return income;
+        }
         const expenceText = getInputText("expences");
         expenceText.innerText = totalExpence;
         const balance = getInputText("balance");
         balance.innerText = income-totalExpence;
     }
     else{
-        return "NAN"
+        alert("Please insert a positive valid number!");
     }
 })
 
